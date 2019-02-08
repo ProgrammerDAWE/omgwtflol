@@ -26,7 +26,7 @@ Client.on("message", (message)=>{
 
     //Hraje mapu:
 
-    const args = message.content.slice(prefix.length).split(/ +/g);
+    const args = message.content.slice(prefix.length).split(/  +/g);
     const command = args.shift().toLowerCase();
 
     switch (command){
@@ -90,7 +90,7 @@ Client.on("message", (message)=>{
         if(nachazivzastavce3 == null){
             nachazivzastavce3 = "";
         }
-        Client.channels.get(omsibotchannelid).send("`🚏 Zpráva o poloze`\nŘidič " + message.author + " se nachází v zastávce: **" + nachazivzastavce0.toUpperCase() + " " + nachazivzastavce1.toUpperCase() + " " + nachazivzastavce2.toUpperCase() + " " + nachazivzastavce3.toUpperCase() + "**");
+        Client.channels.get(testomsibotchannelid).send("`🚏 Zpráva o poloze`\nŘidič " + message.author + " se nachází v zastávce: **" + nachazivzastavce0.toUpperCase() + " " + nachazivzastavce1.toUpperCase() + " " + nachazivzastavce2.toUpperCase() + " " + nachazivzastavce3.toUpperCase() + "**");
         break;
 
         default :
