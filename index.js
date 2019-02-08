@@ -26,7 +26,7 @@ Client.on("message", (message)=>{
 
     //Hraje mapu:
 
-    const args = message.content.slice(prefix.length).split(/-+/g);
+    const args = message.content.slice(prefix.length).split(/ -+/g);
     const command = args.shift().toLowerCase();
 
     switch (command){
@@ -91,6 +91,11 @@ Client.on("message", (message)=>{
             nachazivzastavce3 = "";
         }
         Client.channels.get(testomsibotchannelid).send("`🚏 Zpráva o poloze`\nŘidič " + message.author + " se nachází v zastávce: **" + nachazivzastavce0.toUpperCase() + " " + nachazivzastavce1.toUpperCase() + " " + nachazivzastavce2.toUpperCase() + " " + nachazivzastavce3.toUpperCase() + "**");
+        break;
+
+        case "v":
+        let vysilackatext = args[0];
+        Client.channels.get(testomsibotchannelid).send("`📢 VYSÍLAČKA`\n" + message.author + " říká: " + vysilackatext + "____________________");
         break;
 
         default :
