@@ -94,6 +94,7 @@ Client.on("message", (message)=>{
         break;
 
         case "v":
+        message.delete();
         let vysilackatext = args[0];
         Client.channels.get(testomsibotchannelid).send("`📢 VYSÍLAČKA`\n" + message.author + " říká: " + vysilackatext + "____________________");
         break;
