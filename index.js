@@ -101,7 +101,7 @@ Client.on("message", (message)=>{
 
         case "bus":
         let bus = args[0];
-        Client.channels.get(omsibotchannelid).send(message.author + " jezdí s autobusem: " + bus.toUpperCase);
+        Client.channels.get(omsibotchannelid).send(message.author + " jezdí s autobusem: " + bus.toUpperCase());
         break;
 
         default :
