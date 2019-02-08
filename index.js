@@ -99,4 +99,4 @@ Client.on("message", (message)=>{
 
 })
 
-Client.login(TOKEN);
+Client.login(process.env.BOT_TOKEN);
