@@ -26,7 +26,7 @@ Client.on("message", (message)=>{
 
     //Hraje mapu:
 
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(prefix.length);
     const command = args.shift().toLowerCase();
 
     switch (command){
