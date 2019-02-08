@@ -8,7 +8,7 @@ const uvozovky = "```";
 
 const UserGame = "OMSI 2";
 
-const helpmessage = "**Ahoj, já jsem OMSI Bot** 🙂🚌\n\nMůj prefix je **!o**\nTakže vždy, když mě budeš chtít zavolat, tak jako první do zprávy napíšeš __!o__.\n♻️ Jsem ekologický, takže každý příkaz, který napíšeš, se v okamžiku smaže a zůstane pouze zpráva od BOTa.\n\n**OMSI CHYBOVÉ HLÁŠKY**\n`!ofehler` Zobrazí chybovou hlášku '*Fehler bei Bereichsprüfung.*'\n`!opng` Zobrazí chybovou hlášku '*Unbekannte Bilddateierweiterung (.png)*'\n`!oomsiexe` Zobrazí chybovou hlášku o chybném modulu '*Omsi.exe*'\n`!oargument` Zobrazí chybovou hlášku '*Argument außerhalb des Bereichs*'\n\n**INFORMATIVNÍ ZPRÁVY (zpravidla se zobrazují pouze v kanálu #omsibot, aby neobtěžovali jiné konverzace)**\n`!omap <název mapy>` Informuje hráče na serveru, jakou hraješ mapu.\n`!oz <název stanice>` Udává informaci, na jaké se nacházíš zastávce.\n\n🚌🚌🚌🚌🚌🚌🚌🚌🚌🚌\n*Vysvětlivky*\n`❔ Co znamenají slova v <>?` **Slova ve špičatých závorkách znamenají, že tam můžeš napsat co chceš**\n\n__*BOT by DAWE*__";
+const helpmessage = "**Ahoj, já jsem OMSI Bot** 🙂🚌\n\nMůj prefix je **!o**\nTakže vždy, když mě budeš chtít zavolat, tak jako první do zprávy napíšeš __!o__.\n♻️ Jsem ekologický, takže každý příkaz, který napíšeš, se v okamžiku smaže a zůstane pouze zpráva od BOTa.\n\n**OMSI CHYBOVÉ HLÁŠKY**\n`!ofehler` Zobrazí chybovou hlášku '*Fehler bei Bereichsprüfung.*'\n`!opng` Zobrazí chybovou hlášku '*Unbekannte Bilddateierweiterung (.png)*'\n`!oomsiexe` Zobrazí chybovou hlášku o chybném modulu '*Omsi.exe*'\n`!oargument` Zobrazí chybovou hlášku '*Argument außerhalb des Bereichs*'\n\n**INFORMATIVNÍ ZPRÁVY (zpravidla se zobrazují pouze v kanálu #omsibot, aby neobtěžovali jiné konverzace)**\n`!omap -<název mapy>` Informuje hráče na serveru, jakou hraješ mapu.\n`!oz -<název stanice>` Udává informaci, na jaké se nacházíš zastávce.\n\n**KOMUNIKACE**\n`!ov -<text mluvený do vysílačky>` Simulace řeči do vysílačky.\n\n🚌🚌🚌🚌🚌🚌🚌🚌🚌🚌\n*Vysvětlivky*\n`❔ Co znamenají slova v <>?` **Slova ve špičatých závorkách znamenají, že tam můžeš napsat co chceš**\n\n__*BOT by DAWE*__";
 
 Client.on("ready", ()=>{
     console.log("Už se to roztáčí! Je to fajn? Je to fajn!");
@@ -90,13 +90,13 @@ Client.on("message", (message)=>{
         if(nachazivzastavce3 == null){
             nachazivzastavce3 = "";
         }
-        Client.channels.get(testomsibotchannelid).send("`🚏 Zpráva o poloze`\nŘidič " + message.author + " se nachází v zastávce: **" + nachazivzastavce0.toUpperCase() + " " + nachazivzastavce1.toUpperCase() + " " + nachazivzastavce2.toUpperCase() + " " + nachazivzastavce3.toUpperCase() + "**");
+        Client.channels.get(omsibotchannelid).send("`🚏 Zpráva o poloze`\nŘidič " + message.author + " se nachází v zastávce: **" + nachazivzastavce0.toUpperCase() + " " + nachazivzastavce1.toUpperCase() + " " + nachazivzastavce2.toUpperCase() + " " + nachazivzastavce3.toUpperCase() + "**");
         break;
 
         case "v":
         message.delete();
         let vysilackatext = args[0];
-        Client.channels.get(testomsibotchannelid).send("`📢 VYSÍLAČKA`\n" + message.author + " říká: " + vysilackatext + "\n____________________");
+        Client.channels.get(omsibotchannelid).send("`📢 VYSÍLAČKA`\n" + message.author + " říká: " + vysilackatext + "\n====================");
         break;
 
         default :
