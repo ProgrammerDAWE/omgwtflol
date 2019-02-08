@@ -76,6 +76,7 @@ Client.on("message", (message)=>{
         break;
 
         case "z":
+        message.delete();
         let nachazivzastavce0 = args[0];
         let nachazivzastavce1 = args[1];
         let nachazivzastavce2 = args[2];
