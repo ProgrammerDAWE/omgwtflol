@@ -166,8 +166,7 @@ Client.on("message", (message)=>{
             .addField("Odůvodnění:", repDuvod)
             .addField("Místnost nahlášení:", message.channel)
             .addField("Čas nahlášení:", message.createdAt)
-            .addField("Poslední zpráva nahlášeného:", repUser.lastMessage.toString() + "\nID: `" + repUser.lastMessageID + "`")
-            .addField("URL avataru nahlášeného:", repUser.displayAvatarURL.toString());
+            .addField("URL avataru nahlášeného:", repUser.displayAvatarURL);
             
             let reportsChannel = message.guild.channels.find("name", "reports");
             reportsChannel.send(repMessagetoAdmins);
