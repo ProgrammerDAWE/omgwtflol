@@ -149,7 +149,8 @@ Client.on("message", (message)=>{
         message.delete();
         let repAuthor = message.author;
         let repAuthorID = message.member.user.id;
-        let repUser = message.guild.members.get(args[0]);
+        //let repUser = message.guild.members.get(args[0]);
+        let repUser = message.mentions.users.first() || message.guild.members.get(args[0]);
         let repDuvod = args[1];
         console.log("report - proměnné v pořádku.");
         if(!repUser){
