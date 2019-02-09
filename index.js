@@ -155,11 +155,12 @@ Client.on("message", (message)=>{
         console.log("report - proměnné v pořádku.");
         if(!repUser){
             message.author.send("Uživatel " + repUser + " neexistuje. Zkontrolujte zadané jméno a zkuste to znovu 😉\nAby jsi nemusel/a znovu psát své odůvodnění, máš možnost si ho zkopírovat 😉\n\n`" + repDuvod + "`");
+            console.log(repAuthor + " se snažil nahlásit uživatele " + repUser + ". Důvod: " + repDuvod);
         }else{
             let repMessagetoAdmins = new Discord.RichEmbed()
             .setDescription("❗ Report message ❗")
             .setColor("#d60c0c")
-            .setAuthor(repAuthor)
+            .setImage(repAuthor.displayAvatarURL)
             .setThumbnail(repUser.displayAvatarURL)
             .addField("Nahlášení podal:", repAuthor + " (ID: " + repAuthorID + ")")
             .addField("Nahlášený uživatel:", repUser + " (ID: " + repUser.id + ")")
