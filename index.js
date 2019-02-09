@@ -126,12 +126,13 @@ Client.on("message", (message)=>{
         .addField("BOT status 🤖", "✅ ONLINE");
 
         let serverstatusmessage = new Discord.RichEmbed()
-        .setDescription("❔ BOT info")
+        .setDescription("❔ Server info")
         .setColor("#0edb0a")
         .setThumbnail(Client.user.displayAvatarURL)
         .addField("BOT status 🤖", "✅ ONLINE");
-        
+
         message.channel.send(botstatusmessage);
+        message.channel.send(serverstatusmessage);
         break;
 
         default :
