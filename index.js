@@ -147,7 +147,7 @@ Client.on("message", (message)=>{
 
         case "report":
         message.delete();
-        let repAuthor = message.author();
+        let repAuthor = message.author;
         let repAuthorID = message.member.user.id;
         let repUser = message.guild.members.get(args[0]);
         let repDuvod = args[1];
