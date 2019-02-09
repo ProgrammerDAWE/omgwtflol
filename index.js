@@ -126,12 +126,10 @@ Client.on("message", (message)=>{
         .addField("BOT status 🤖", "✅ ONLINE");
 
         let serverstatusmessage = new Discord.RichEmbed()
-        .setDescription("❔ Server info")
+        .setDescription("❔ BOT info")
         .setColor("#0edb0a")
-        .setThumbnail(message.guild.displayAvatarURL)
-        .addField("Server name ✏️", message.guild.name)
-        .addField("Server status 📶", "✅ ONLINE")
-        .addField("Počet hráčů 👦", message.guild.memberCount);
+        .setThumbnail(Client.user.displayAvatarURL)
+        .addField("BOT status 🤖", "✅ ONLINE");
 
         message.channel.send(botstatusmessage);
         message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.member.user.username);
