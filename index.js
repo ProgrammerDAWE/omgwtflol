@@ -118,27 +118,7 @@ Client.on("message", (message)=>{
         message.channel.send(invitemessage);
         break;
 
-        case "status":
-        let boticon = Client.user.displayAvatarURL;
-        let botstatusmessage = new Discord.RichEmbed()
-        .setDescription("❔ BOT info")
-        .setColor("#0edb0a")
-        .setThumbnail(boticon)
-        .addField("BOT status 🤖", "✅ ONLINE");
-
-        let serverstatusmessage = new Discord.RichEmbed()
-        .setDescription("❔ Server info")
-        .setColor("#0edb0a")
-        .setThumbnail(message.guild.displayAvatarURL)
-        .addField("Server name ✏️", message.guild.name)
-        .addField("Server status 📶", "✅ ONLINE")
-        .addField("Počet hráčů 👦", message.guild.memberCount)
-        .addField("Počet místností #️⃣", message.guild.channels)
-        .addField("Vstupní kanál", message.guild.defaultChannel);
-
-        message.channel.send(botstatusmessage);
-        message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.channel.author);
-        break;
+        
 
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
