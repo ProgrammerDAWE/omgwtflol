@@ -130,8 +130,7 @@ Client.on("message", (message)=>{
         .setColor("#0edb0a")
         .setThumbnail(Client.user.displayAvatarURL)
         .addField("BOT status 🤖", "✅ ONLINE");
-
-        message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.member.user.username);
+        
         message.channel.send(botstatusmessage);
         break;
 
