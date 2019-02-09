@@ -118,7 +118,7 @@ Client.on("message", (message)=>{
         message.channel.send(invitemessage);
         break;
 
-        case "status":
+        case "info":
         let boticon = Client.user.displayAvatarURL;
         let botstatusmessage = new Discord.RichEmbed()
         .setDescription("❔ BOT info")
