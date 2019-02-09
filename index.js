@@ -151,6 +151,7 @@ Client.on("message", (message)=>{
         let repAuthorID = message.member.user.id;
         let repUser = message.guild.members.get(args[0]);
         let repDuvod = args[1];
+        console.log("report - proměnné v pořádku.");
         if(!repUser){
             message.author.send("Uživatel " + repUser + " neexistuje. Zkontrolujte zadané jméno a zkuste to znovu 😉\nAby jsi nemusel/a znovu psát své odůvodnění, máš možnost si ho zkopírovat 😉\n\n`" + repDuvod + "`");
         }else{
