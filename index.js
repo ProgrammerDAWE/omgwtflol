@@ -134,10 +134,10 @@ Client.on("message", (message)=>{
         let serverstatusmessage = new Discord.RichEmbed()
         .setDescription("❔ Server info")
         .setColor("#0edb0a")
-        .setThumbnail(message.guild.displayAvatarURL)
+        .setThumbnail(message.guild.iconURL)
         .addField("Server status 📶", "✅ ONLINE")
         .addField("Jméno serveru ✏️", message.guild.name)
-        .addField("Založení 🕒", message.guild.createdAt)
+        .addField("Založení 🕒", "19. Října 17:13")
         .addField("Počet hráčů 👦", message.guild.memberCount);
 
         message.channel.send(botstatusmessage);
