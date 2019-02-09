@@ -131,8 +131,7 @@ Client.on("message", (message)=>{
         .setThumbnail(message.guild.displayAvatarURL)
         .addField("Server name ✏️", message.guild.name)
         .addField("Server status 📶", "✅ ONLINE")
-        .addField("Počet hráčů 👦", message.guild.memberCount)
-        .addField("Počet místností #️⃣", message.guild.channels);
+        .addField("Počet hráčů 👦", message.guild.memberCount);
 
         message.channel.send(botstatusmessage);
         message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.member.user.username);
