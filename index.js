@@ -145,6 +145,49 @@ Client.on("message", (message)=>{
         message.channel.send(serverstatusmessage);
         break;
 
+        case "report":
+        message.report();
+        let repAuthor = message.author();
+        let repAuthorID = message.member.user.id;
+        let repUser = message.guild.members.get(args[0]);
+        let repDuvod = args[1];
+        if(!repUser){
+            message.author.send("Uživatel " + repUser + " neexistuje. Zkontrolujte zadané jméno a zkuste to znovu 😉\nAby jsi nemusel/a znovu psát své odůvodnění, máš možnost si ho zkopírovat 😉\n\n`" + repDuvod + "`");
+        }else{
+            let repMessagetoAdmins = new Discord.RichEmbed()
+            .setDescription("❗ Report message ❗")
+            .setColor("#d60c0c")
+            .setAuthor(repAuthor)
+            .setThumbnail(repUser.displayAvatarURL)
+            .addField("Nahlášení podal:", repAuthor + " (ID: " + repAuthorID + ")")
+            .addField("Nahlášený uživatel:", repUser + " (ID: " + repUser.id + ")")
+            .addField("Odůvodnění:", repDuvod)
+            .addField("Místnost nahlášení:", message.channel)
+            .addField("Čas nahlášení:", message.createdAt)
+            .addField("Poslední zpráva nahlášeného:", repUser.lastMessage + "\nID: `" + repUser.lastMessageID + "`")
+            .addField("URL avataru nahlášeného:", repUser.displayAvatarURL);
+            
+            let reportsChannel = message.guild.channels.find("name", "reports");
+            reportsChannel.send(repMessagetoAdmins);
+
+            //Poslání zprávy autorovi:
+
+            let repMessagetoAuthor = new Discord.RichEmbed()
+            .setDescription("❗ Nahlášení uživatele")
+            .setColor("#15c636")
+            .setThumbnail(repUser.displayAvatarURL)
+            .addField("Nahlášení uživatele proběhlo úspěšně.", "Úspěšně jsi nahlásil/a uživatele " + repUser + ".\nO tvém nahlášení se nikdo nedozví. Vědět o tom budou pouze administrátoři.");
+
+            let podekovaniReport = new Discord.RichEmbed()
+            .setColor("#159fc6")
+            .setThumbnail(Client.user.displayAvatarURL)
+            .addField("Děkujeme že pomáháš zlepšovat server", "Díky tobě a tvému nahlášení, můžeme zjistit, co, nebo kdo našemu serveru moc neprozpívá a budeme to řešit.\nSnažíme se server udržet klidný a přátelský.\nNěkdy to není úplně lehké, ale díky tobě a dalším co si najdou čas a odešlou nám zprávu s nahlášením, tak zjistíme i to, co by jsme bez tebe a jiných nezjistili a toho si vážíme.\n\nPokud někdy opět uvidíš nějaký problém, najdi si prosím čas a dej nám o tom vědět pomocí příkazu `!oreport`.\nDěkujeme, tým OMSI Chat (CZ/SK/EN).");
+
+            message.author.send(repMessagetoAuthor);
+            message.author.send(podekovaniReport);
+        }
+        break;
+
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
         break;
