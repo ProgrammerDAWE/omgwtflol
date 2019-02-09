@@ -187,6 +187,8 @@ Client.on("message", (message)=>{
 
             message.author.send(repMessagetoAuthor);
             message.author.send(podekovaniReport);
+
+            console.log("Zpráva o nahlášení: " + repAuthor + " nahlásil " + repUser + ". Důvod: " + repDuvod);
         }
         break;
 
