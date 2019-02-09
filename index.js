@@ -137,7 +137,7 @@ Client.on("message", (message)=>{
         .addField("Vstupní kanál", message.guild.defaultChannel);
 
         message.channel.send(botstatusmessage);
-        message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.channel.user.name);
+        message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.channel.author);
         break;
 
         default :
