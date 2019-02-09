@@ -159,7 +159,7 @@ Client.on("message", (message)=>{
             let repMessagetoAdmins = new Discord.RichEmbed()
             .setDescription("❗ Report message ❗")
             .setColor("#d60c0c")
-            .setTitle(repAuthor.displayAvatarURL)
+            .setAuthor(repAuthor, [repAuthor.displayAvatarURL])
             .setThumbnail(repUser.displayAvatarURL)
             .addField("Nahlášení podal:", repAuthor + " (ID: " + repAuthorID + ")")
             .addField("Nahlášený uživatel:", repUser + " (ID: " + repUser.id + ")")
