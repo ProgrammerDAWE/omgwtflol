@@ -9,8 +9,6 @@ const uvozovky = "```";
 const UserGame = "OMSI 2";
 const SubUserGame = "The Omnibus Simulator";
 
-const helpmessage = "**Ahoj " + message.author + ", já jsem OMSI Bot** 🙂🚌\n\nMůj prefix je **!o**\nTakže vždy, když mě budeš chtít zavolat, tak jako první do zprávy napíšeš __!o__.\n♻️ Jsem ekologický, takže každý příkaz, který napíšeš, se v okamžiku smaže a zůstane pouze zpráva od BOTa.\n\n**OMSI CHYBOVÉ HLÁŠKY**\n`!ofehler` Zobrazí chybovou hlášku '*Fehler bei Bereichsprüfung.*'\n`!opng` Zobrazí chybovou hlášku '*Unbekannte Bilddateierweiterung (.png)*'\n`!oomsiexe` Zobrazí chybovou hlášku o chybném modulu '*Omsi.exe*'\n`!oargument` Zobrazí chybovou hlášku '*Argument außerhalb des Bereichs*'\n\n**INFORMATIVNÍ ZPRÁVY (zpravidla se zobrazují pouze v kanálu #omsibot, aby neobtěžovali jiné konverzace)**\n`!omap -<název mapy>` Informuje hráče na serveru, jakou hraješ mapu.\n`!obus -<model autobusu>` Informuje hráče na serveru, jaký momentálně řídíš autobus\n`!oz -<název stanice>` Udává informaci, na jaké se nacházíš zastávce.\n\n**KOMUNIKACE**\n`!ov -<text mluvený do vysílačky>` Simulace řeči do vysílačky.\n\n**OSTATNÍ**\n`!oinfo` Zobrazí informační zprávy o serveru a botovi\n`!oinvite` Zobrazí zprávu o používání BOTa na jiných serverech\n\n🚌🚌🚌🚌🚌🚌🚌🚌🚌🚌\n*Vysvětlivky*\n`❔ Co znamenají slova v <>?` **Slova ve špičatých závorkách znamenají, že tam můžeš napsat co chceš**\n\n**BOT AUTHORS:**\n💻 | DAWE - `Developer`\n👀 | Radim - `Tester`";
-
 Client.on("ready", ()=>{
     console.log("Už se to roztáčí! Je to fajn? Je to fajn!");
     console.log("BOT je ONLINE!!");
@@ -24,6 +22,8 @@ Client.on("message", (message)=>{
         message.delete();
         message.channel.send("Ahoj" + message.author + " :slight_smile:");
     }
+
+    const helpmessage = "**Ahoj " + message.author + ", já jsem OMSI Bot** 🙂🚌\n\nMůj prefix je **!o**\nTakže vždy, když mě budeš chtít zavolat, tak jako první do zprávy napíšeš __!o__.\n♻️ Jsem ekologický, takže každý příkaz, který napíšeš, se v okamžiku smaže a zůstane pouze zpráva od BOTa.\n\n**OMSI CHYBOVÉ HLÁŠKY**\n`!ofehler` Zobrazí chybovou hlášku '*Fehler bei Bereichsprüfung.*'\n`!opng` Zobrazí chybovou hlášku '*Unbekannte Bilddateierweiterung (.png)*'\n`!oomsiexe` Zobrazí chybovou hlášku o chybném modulu '*Omsi.exe*'\n`!oargument` Zobrazí chybovou hlášku '*Argument außerhalb des Bereichs*'\n\n**INFORMATIVNÍ ZPRÁVY (zpravidla se zobrazují pouze v kanálu #omsibot, aby neobtěžovali jiné konverzace)**\n`!omap -<název mapy>` Informuje hráče na serveru, jakou hraješ mapu.\n`!obus -<model autobusu>` Informuje hráče na serveru, jaký momentálně řídíš autobus\n`!oz -<název stanice>` Udává informaci, na jaké se nacházíš zastávce.\n\n**KOMUNIKACE**\n`!ov -<text mluvený do vysílačky>` Simulace řeči do vysílačky.\n\n**OSTATNÍ**\n`!oinfo` Zobrazí informační zprávy o serveru a botovi\n`!oinvite` Zobrazí zprávu o používání BOTa na jiných serverech\n\n🚌🚌🚌🚌🚌🚌🚌🚌🚌🚌\n*Vysvětlivky*\n`❔ Co znamenají slova v <>?` **Slova ve špičatých závorkách znamenají, že tam můžeš napsat co chceš**\n\n**BOT AUTHORS:**\n💻 | DAWE - `Developer`\n👀 | Radim - `Tester`";
 
     //Hraje mapu:
 
