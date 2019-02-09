@@ -105,6 +105,19 @@ Client.on("message", (message)=>{
         Client.channels.get(omsibotchannelid).send(message.author + " jezdí s autobusem: **" + bus.toUpperCase() + "**");
         break;
 
+        // INVITE COMMAND
+
+        case "invite":
+        let boticon = Client.user.displayAvatarURL();
+        let oduvodneni = "Server `" + message.guild.name + "` je jedinečný díky prvnímu OMSI BOTovi na světě. Přejeme si, aby to tak zůstalo i nadále.\nBOT je vytvářený speciálně pro tento server a chceme si tak zachovat své jméno a neposkytovat BOTa i jiným serverům. Děkujeme za pochopení.\n\nV budoucnu máme v plánu BOTa ještě více rozšířit. Jak? To nemůžeme prozradit 😊";
+        let invitemessage = new Discord.RichEmbed()
+        .setDescription("OMSI BOT INVITE LINK")
+        .setColor("#ff6100")
+        .setThumbnail(boticon)
+        .addField("Z licenčních důvodů není povoleno vkládání BOTa na jiné servery!", oduvodneni);
+        message.channel.send(invitemessage);
+        break;
+
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
         break;
