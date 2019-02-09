@@ -134,7 +134,7 @@ Client.on("message", (message)=>{
         .addField("Server status 📶", "✅ ONLINE")
         .addField("Počet hráčů 👦", message.guild.memberCount)
         .addField("Počet místností #️⃣", message.guild.channels)
-        .addField("Vstupní kanál", message.guild.defaultChannel)
+        .addField("Vstupní kanál", message.guild.defaultChannel);
 
         message.channel.send(botstatusmessage);
         message.channel.send(serverstatusmessage + "\n\nPříkaz zadal: " + message.channel.user.name);
