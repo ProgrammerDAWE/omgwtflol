@@ -119,7 +119,6 @@ Client.on("message", (message)=>{
         break;
 
         case "info":
-        let boticon = Client.user.displayAvatarURL;
         let botstatusmessage = new Discord.RichEmbed()
         .setDescription("❔ BOT info")
         .setColor("#0edb0a")
