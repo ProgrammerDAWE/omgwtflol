@@ -125,7 +125,7 @@ Client.on("message", (message)=>{
         .setThumbnail(Client.user.displayAvatarURL)
         .addField("BOT status 🤖", "✅ ONLINE");
 
-        let serverstatusmessage = new Discord.RichEmbed()
+        let serverstatusmessage = Discord.RichEmbed()
         .setDescription("❔ BOT info")
         .setColor("#0edb0a")
         .setThumbnail(Client.user.displayAvatarURL)
