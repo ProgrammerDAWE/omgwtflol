@@ -191,6 +191,20 @@ Client.on("message", (message)=>{
         }
         break;
 
+        case "clean":
+        let messagesCount = args[0];
+        if(!message.member.hasPermission("MANAGE_MESSAGES")){
+            let nemaPrava = new Discord.RichEmbed()
+        .setColor("#ff8c00")
+        .addField("Nemáš dostatečná oprávnění!", "Nemůžeš mazat zprávy, protože nejsi moderátor!\nPokud potřebuješ urgentně smazat zprávy, napiš administrátorům.");
+        message.channel.send(nemaPrava);
+        console.log(message.member.user.username + " se snažil smazat " + messagesCount + " zpráv.");
+        }else{
+            message.channel.bulkDelete(messagesCount).then(() => {message.channel.send("🗑️ Smazáno " + messagesCount + " zpráv.").then(msg => msg.delete(5000));
+            });
+        }
+        break;
+
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
         break;
