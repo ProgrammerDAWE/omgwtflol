@@ -248,6 +248,7 @@ Client.on("message", (message)=>{
         let kickChannel = message.guild.channels.find("name", "server");
         message.guild.member(kickUser).kick(args[1]);
         kickChannel.send(kickChannel);
+        console.log("KICK: " + kickAuthor + " kicknul " + kickUser + ". Důvod: " + args[1]);
         break;
 
         default :
