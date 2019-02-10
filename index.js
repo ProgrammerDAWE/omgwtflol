@@ -221,7 +221,7 @@ Client.on("message", (message)=>{
         let rateAddonMessage = new Discord.RichEmbed()
         .setThumbnail(args[0])
         .setColor("#e0e810")
-        .addField("OMSI Bot tento addon hodnotí " + args[1] + " bodů z " + args[2]);
+        .addField("HODNOCENÍ ADDONU", "OMSI Bot tento addon hodnotí " + args[1] + " bodů z " + args[2] + " 👍");
         message.channel.send(rateAddonMessage);
         break;
 
