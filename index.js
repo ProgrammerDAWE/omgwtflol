@@ -216,6 +216,15 @@ Client.on("message", (message)=>{
         }
         break;
 
+        case "rateaddon":
+        message.delete();
+        let rateAddonMessage = new Discord.RichEmbed()
+        .setThumbnail(args[0])
+        .setColor("#e0e810")
+        .addField("OMSI Bot tento addon hodnotí " + args[1] + " bodů z " + args[2]);
+        message.channel.send(rateAddonMessage);
+        break;
+
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
         break;
