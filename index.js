@@ -38,6 +38,7 @@ Client.on("message", (message)=>{
         break;
     
         case "admin":
+        message.delete();
         let adminHelp = new Discord.RichEmbed()
         .setDescription("Administrátorské a Moderátorské příkazy")
         .setColor("#dd0b0b")
@@ -117,6 +118,7 @@ Client.on("message", (message)=>{
         // INVITE COMMAND
 
         case "invite":
+        message.delete();
         let boticon = Client.user.displayAvatarURL;
         let oduvodneni = "Server `" + message.guild.name + "` je jedinečný díky prvnímu OMSI BOTovi na světě. Přejeme si, aby to tak zůstalo i nadále.\nBOT je vytvářený speciálně pro tento server a chceme si tak zachovat své jméno a neposkytovat BOTa jiným serverům. Děkujeme za pochopení.\n\nV budoucnu máme v plánu BOTa ještě více rozšířit. Jak? To nemůžeme prozradit 😊";
         let invitemessage = new Discord.RichEmbed()
@@ -128,6 +130,7 @@ Client.on("message", (message)=>{
         break;
 
         case "info":
+        message.delete();
         let botstatusmessage = new Discord.RichEmbed()
         .setDescription("❔ BOT info")
         .setColor("#0edb0a")
