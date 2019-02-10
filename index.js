@@ -225,6 +225,31 @@ Client.on("message", (message)=>{
         message.channel.send(rateAddonMessage);
         break;
 
+        case "okick":
+        message.delete();
+        let kickAuthor = message.author;
+        let kickUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!kickUser) return message.author.send("Uživatel " + kickUser + " neexistuje. Zkontrolujte jméno a zkuste to znovu.");
+        let noPermissions = new Discord.RichEmbed()
+        .setColor("#ff7f00")
+        .addField("NEMÁŠ DOSTATEČNÁ OPRÁVNĚNÍ", kickAuthor + " nemůžeš kicknout uživatele ze serveru, nejsi Administrátor, ani Moderátor.");
+        let adminModerator = new Discord.RichEmbed()
+        .setColor("#ff7f00")
+        .addField("NEMŮŽEŠ KICKNOUT DANÉHO UŽIVATELE", kickAuthor + " nemůžeš kicknout administrátora ani moderátora!");
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(noPermissions);
+        if(kickUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(adminModerator);
+        let kickMessage = new Discord.RichEmbed()
+        .setDescription("Zpráva o vyhození uživatele ze serveru")
+        .setColor("#eda838")
+        .setThumbnail(kickUser.avatarURL)
+        .addField("Hráč " + kickUser + " byl vyhozen ze serveru", "Důvod: " + args[1])
+        .addField("Vyhozen v místnosti:", message.channel);
+
+        let kickChannel = message.guild.channels.find("name", "server");
+        message.guild.member(kickUser).kick(args[1]);
+        kickChannel.send(kickChannel);
+        break;
+
         default :
         message.channel.send("`❌ Neplatný příkaz !`\n > Pro nápovědu zadej **!ohelp** ");
         break;
