@@ -225,7 +225,7 @@ Client.on("message", (message)=>{
         message.channel.send(rateAddonMessage);
         break;
 
-        case "okick":
+        case "kick":
         message.delete();
         let kickAuthor = message.author;
         let kickUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
