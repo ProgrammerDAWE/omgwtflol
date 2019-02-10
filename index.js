@@ -36,6 +36,14 @@ Client.on("message", (message)=>{
         message.delete();
         message.channel.send(helpmessage);
         break;
+    
+        case "admin":
+        let adminHelp = new Discord.RichEmbed()
+        .setDescription("Administrátorské a Moderátorské příkazy")
+        .setColor("#dd0b0b")
+        .addField("Příkazy, které mohou používat pouze administrátoři a moderátoři:", "`!oclean  <počet zpráv>` Vyčistí určený počet zpráv");
+        message.author.send(adminHelp);
+        break;
 
         // OMSI CHYBOVÉ HLÁŠKY
         case "fehler":
